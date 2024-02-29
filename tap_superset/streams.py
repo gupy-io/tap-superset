@@ -25,7 +25,6 @@ class UsersStream(SupersetStream):
         th.Property("username", th.StringType),
         th.Property("email", th.StringType),
         th.Property("last_login", th.StringType),
-        th.Property("username", th.StringType),
         th.Property("active", th.BooleanType),
         th.Property("changed_on", th.StringType),
         th.Property("id", th.IntegerType),

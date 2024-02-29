@@ -29,6 +29,7 @@ plugins:
       value: '2024-01-01T00:00:00Z'
   loaders:
   - name: target-jsonl
+    namespace: target_jsonl
     variant: andyh1203
     pip_url: target-jsonl
     config:

@@ -135,7 +135,7 @@ class SupersetStream(RESTStream):
         res = response.json()
         result = res["result"]
 
-        if any("id" in obj for obj in result):
+        if not any("id" in obj for obj in result):
             result = update_dict_with(result, "id", res["ids"])
 
         yield from extract_jsonpath(self.records_jsonpath, input=result)
