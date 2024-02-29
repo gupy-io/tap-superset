@@ -50,10 +50,10 @@ class TapSuperset(Tap):
             A list of discovered streams.
         """
         return [
-            # streams.UsersStream(self),
-            # streams.ChartsStream(self),
+            streams.UsersStream(self),
+            streams.ChartsStream(self),
             streams.LogsStream(self),
-            # streams.DashboardsStream(self),
+            streams.DashboardsStream(self),
         ]
 
 
