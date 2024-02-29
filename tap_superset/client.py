@@ -49,6 +49,7 @@ class SupersetStream(RESTStream):
             username=self.config.get("username"),
             password=self.config.get("password"),
         )
+
         return BearerTokenAuthenticator.create_for_stream(
             self,
             token=auth_token,
@@ -99,14 +100,18 @@ class SupersetStream(RESTStream):
             "page_size": 50,
             "filters": [],
         }
+
         start_timestamp = get_start_timestamp(
             self.get_starting_replication_key_value(context)
         )
+
         if next_page_token:
             params["page"] = next_page_token
+
         if self.replication_key:
             params["order_direction"] = "asc"
             params["order_column"] = self.replication_key
+
         if start_timestamp:
             params["filters"] = [
                 {
@@ -129,7 +134,8 @@ class SupersetStream(RESTStream):
         """
         res = response.json()
         result = res["result"]
-        if "ids" not in result:
+
+        if any("id" in obj for obj in result):
             result = update_dict_with(result, "id", res["ids"])
 
         yield from extract_jsonpath(self.records_jsonpath, input=result)
