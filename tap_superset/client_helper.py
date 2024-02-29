@@ -14,7 +14,6 @@ def update_dict_with(
 
 
 def get_start_timestamp(timestamp):
-    # timestamp = self.get_starting_replication_key_value(context)
     if timestamp:
         start_timestamp = datetime.fromisoformat(timestamp)
         start_timestamp = start_timestamp.strftime("%Y-%m-%d %H:%M:%S")
