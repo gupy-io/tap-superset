@@ -18,7 +18,7 @@ def fetch_token(base_url, username, password):
 
     json_data = {
         "provider": "db",
-        "refresh": True,
+        "refresh": False,
         "username": username,
         "password": password,
     }
