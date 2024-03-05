@@ -97,7 +97,7 @@ class SupersetStream(RESTStream):
         params = {
             "columns": [],
             "page": 0,
-            "page_size": 50,
+            "page_size": 100,
             "filters": [],
         }
 
