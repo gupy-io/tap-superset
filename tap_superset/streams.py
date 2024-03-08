@@ -58,6 +58,7 @@ class ChartsStream(SupersetStream):
     path = "/api/v1/chart/"
     primary_keys: t.List[str] = ["id"]
     replication_key: str = "last_saved_at"
+    is_sorted: bool = True
     schema: t.Any = th.PropertiesList(
         th.Property("is_managed_externally", th.BooleanType),
         th.Property("certified_by", th.StringType),
@@ -88,6 +89,7 @@ class LogsStream(SupersetStream):
     path = "/api/v1/log/"
     primary_keys: t.List[str] = ["id"]
     replication_key: str = "dttm"
+    is_sorted: bool = True
     schema: t.Any = th.PropertiesList(
         th.Property("action", th.StringType),
         th.Property("dttm", th.DateTimeType),
