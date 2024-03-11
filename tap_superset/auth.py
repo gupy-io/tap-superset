@@ -1,16 +1,7 @@
 import requests
 
-_TOKEN = None
-
 
 def get_auth_token(base_url, username, password):
-    global _TOKEN
-    if _TOKEN is None:
-        _TOKEN = fetch_token(base_url, username, password)
-    return _TOKEN
-
-
-def fetch_token(base_url, username, password):
     headers = {
         "accept": "application/json",
         "Content-Type": "application/json",
