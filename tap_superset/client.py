@@ -4,8 +4,7 @@ from __future__ import annotations
 
 import sys
 import json
-import logging
-from typing import Any, Callable, Iterable, List
+from typing import Any, Callable, Iterable
 
 import requests
 from singer_sdk.authenticators import BearerTokenAuthenticator
@@ -32,9 +31,8 @@ class SupersetStream(RESTStream):
         """Return the API URL root, configurable via tap settings."""
         return self.config["base_url"]
 
-    records_jsonpath = "$[*]"  # Or override `parse_response`.
+    records_jsonpath = "$[*]"
 
-    # Set this value or override `get_new_paginator`.
     next_page_token_jsonpath = "$.next_page"  # noqa: S105
 
     @property
