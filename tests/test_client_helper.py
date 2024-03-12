@@ -15,8 +15,8 @@ def test_update_dict_with():
 
 
 def test_get_start_timestamp():
-    input = "2023-02-10T00:00:00Z"
-    expected = "2023-02-10 00:00:00"
+    input = "2022-05-10T19:57:35.680477"
+    expected = "2022-05-10 19:57:35.680477"
     result = get_start_timestamp(input)
     assert result == expected
 

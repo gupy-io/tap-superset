@@ -16,7 +16,7 @@ def update_dict_with(
 def get_start_timestamp(timestamp):
     if timestamp:
         start_timestamp = datetime.fromisoformat(timestamp)
-        start_timestamp = start_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+        start_timestamp = start_timestamp.strftime("%Y-%m-%d %H:%M:%S.%f")
         return start_timestamp
     else:
         return None
