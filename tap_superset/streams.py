@@ -99,4 +99,5 @@ class LogsStream(SupersetStream):
         th.Property("duration_ms", th.IntegerType),
         th.Property("id", th.IntegerType),
         th.Property("referrer", th.StringType),
+        th.Property("json", th.StringType),
     ).to_dict()
