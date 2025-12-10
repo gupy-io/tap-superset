@@ -63,7 +63,7 @@ class ChartsStream(SupersetStream):
         th.Property("is_managed_externally", th.BooleanType),
         th.Property("certified_by", th.StringType),
         th.Property("certification_details", th.StringType),
-        th.Property("cache_timeout", th.StringType),
+        th.Property("cache_timeout", th.IntegerType),
         th.Property("changed_by_name", th.StringType),
         th.Property("changed_on_utc", th.StringType),
         th.Property("created_by_name", th.StringType),
